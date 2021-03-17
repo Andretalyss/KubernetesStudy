@@ -1,0 +1,7 @@
+apiVersion: v2
+name: hello-helm
+description: O primeir chart helm
+
+type: application
+version: 0.1.0
+appVersion: 0.0.0
