@@ -1,3 +1,5 @@
+#Testes tentando setar variáveis de ambiente através do values.yaml
+
 extraEnv:      
   EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: eurekatest
   NIVEL_LOG_APP: debug
