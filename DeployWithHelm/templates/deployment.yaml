@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: configurador
+    namespace: chart-seguros
+    labels:
+        app: configuradorApp
+spec:
+    selector:
+        matchLabels:
+            app: configuradorApp
+    replicas: 1
+    template:
+        metadata:
+            labels:
+                app: configuradorApp
+        spec:
+            containers:
+            - env:
+              {{- range $key, $value := .Values.extraEnv }}
+              - name: {{ $key }}
+                value: {{ $value }}
+              {{- end }}  
+              image: 261177153744.dkr.ecr.us-east-1.amazonaws.com/teste/teste:RELEASE-1.0.0-3a4b6db0
+              imagePullPolicy: IfNotPresent
+              name: configurador
+              ports:
+              - containerPort: 8888

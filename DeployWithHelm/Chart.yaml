@@ -1,0 +1,4 @@
+apiVersion: v2
+name: seguros-chart
+description: Teste seguradora como chart
+version: 1.0
