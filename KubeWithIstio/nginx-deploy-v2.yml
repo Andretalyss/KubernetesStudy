@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: testing-v2
+    labels:
+        version: v2
+        app: myApp
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            name: testing
+            app: myApp
+    template:
+        metadata:
+            name: testing
+            labels:
+                name: testing
+                version: v2
+                app: myApp
+        spec:
+            containers:
+            - image: andrezin10/nginx-index1
+              name: teste-version2
+              ports:
+              - containerPort: 80

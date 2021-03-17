@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+    name: nginx-virtual
+spec:
+  hosts:
+  - myApp 
+  - route:
+    - destination:     
+        host: myApp
+        subset: v1
+      weight: 100
+    - destination:
+        host: myApp
+        subset: v2
+      weight: 0
